@@ -135,5 +135,55 @@
         }
     });
     
+
+
 })(jQuery);
+
+function submitform(){
+    
+    var name=document.getElementById("Name").value;
+    var email=document.getElementById("Email").value;
+    var subject=document.getElementById("Subject").value;
+    var message=document.getElementById("Message").value;
+    var otherSubject = document.getElementById("OtherSubject").value;
+    var otherInput = document.getElementById("otherInput");
+    if(otherInput.style.display == "block"){
+        subject=otherSubject
+    }
+    console.log(subject)
+    var body="Name: "+ name + "<br/>Email: "+ email+ "<br/>Subject: "+ subject + "<br/>Message: "+ message
+
+
+    // console.log("sum=bmitform",body)    
+    Email.send({
+        SecureToken:"2ff701b7-d196-49d1-bec6-9f32e74ee64c",
+        // Host : "smtp.elasticemail.com",
+        // Username : "rudrakshagarwal03@gmail.com",
+        // Password : "DD94662D617EA5D7D9685C8E1383BC3D57F4",
+        To : 'rudrakshagarwal03@gmail.com',
+        From : "rudrakshagarwal03@gmail.com",
+        Subject : subject,
+        Body : body
+    }).then(
+      message => {
+        if(message=="OK"){
+            swal("Successfull!","Your enquiry/review has been send","success");
+            document.getElementById("enquiry-form").reset();
+        }
+        else{
+            swal("Something Went Wrong!","Your enquiry/review has not been send","error")
+        }
+      }
+    );
+}
+function checkOther() {
+    var subjectSelect = document.getElementById("Subject");
+    var otherInput = document.getElementById("otherInput");
+
+    if (subjectSelect.value === "Other") {
+        otherInput.style.display = "block";
+    } else {
+        otherInput.style.display = "none";
+    }
+}
 

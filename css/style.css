@@ -5,16 +5,25 @@
     --light: #EEF9FF;
     --dark: #091E3E;
 }
-
+.enquiry-icon {
+    position: fixed;
+    bottom: 20px; /* Adjust the distance from the bottom as needed */
+    right: 20px; /* Adjust the distance from the right as needed */
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    /* Add any other styles you want for the icon */
+    cursor: pointer; /* Optional: Add a pointer cursor to indicate it's clickable */
+}
 
 /*** Spinner ***/
 .spinner {
     width: 40px;
     height: 40px;
-    background: var(--primary);
     margin: 100px auto;
-    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
-    animation: sk-rotateplane 1.2s infinite ease-in-out;
+    -webkit-animation: sk-rotateplane 2s infinite ease-in-out;
+    animation: sk-rotateplane 2s infinite ease-in-out;
+    background-image: url(../img/favicon.ico); /* Replace 'path/to/your/image.png' with the actual path to your image */
+    background-size: cover;
 }
 
 @-webkit-keyframes sk-rotateplane {
@@ -429,7 +438,25 @@ h6,
     bottom: 45px;
     z-index: 99;
 }
+.enquiry-container {
+    position: fixed;
+    bottom: 45px; /* Adjust the distance from the bottom as needed */
+    left: 45px; /* Adjust the distance from the left as needed */
+    width: 52px; /* Adjust the width as needed */
+    height: 52px; /* Adjust the height as needed */
+    border-radius: 50%; /* Make the container rounded */
+    background-color: var(--primary); /* Background color for the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Optional: Add a pointer cursor to indicate it's clickable */
+    z-index: 99;
+}
 
+.enquiry-icon {
+    font-size: 30px; /* Adjust the font size as needed */
+    color: white; /* Adjust the icon color as needed */
+}
 .bg-header {
     background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
@@ -446,5 +473,37 @@ h6,
 @media (min-width: 767.98px) {
     .footer-about {
         margin-bottom: -75px;
+    }
+}
+@media (max-width: 991.98px) {
+    #about-section {
+        background: url(../img/about1.png) center center no-repeat;
+        background-size: cover;
+    }
+
+    #about-section .container {
+        background: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background for better readability */
+        padding: 20px; /* Adjust the padding as needed */
+        border-radius: 10px; /* Optional: Add rounded corners for better aesthetics */
+    }
+
+    #about-section .col-lg-5 {
+        display: none; /* Hide the image column on smaller screens */
+    }
+}
+@media (max-width: 991.98px) {
+    #features {
+        background: url(../img/pic2222.png) center center no-repeat;
+        background-size: cover;
+    }
+
+    #features .container {
+        background: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background for better readability */
+        padding: 20px; /* Adjust the padding as needed */
+        border-radius: 10px; /* Optional: Add rounded corners for better aesthetics */
+    }
+
+    #features .image {
+        display: none; /* Hide the image column on smaller screens */
     }
 }
